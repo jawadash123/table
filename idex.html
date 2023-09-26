@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table In JS</title>
+</head>
+<body>
+    <h1>Multiplication table</h1>
+
+    <div>
+        <form onsubmit="Result(); return false;">
+            <span>
+                <label for="n"><b>Enter a Nunber:</b></label>
+                <input type="number" name="n" id="n">
+            </span>
+            <span>
+                <button type="submit">Check Result</button>
+            </span>
+        </form>
+        <table border="2px">
+            <tr>
+                <th id="t"></th>
+            </tr>
+            <tr>
+                <td><p id="text"></p></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function Result() {
+            let number = document.querySelector("#n").value;
+            document.querySelector("#t").innerHTML = `<b> Table of ${number}`;
+            for (let i = 1; i <= 10; i++) {
+                document.querySelector("#text").innerHTML += `<br> ${number} X ${i} = ${number * i}`
+            }
+        }
+    </script>
+</body>
+</html>
